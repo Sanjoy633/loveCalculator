@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,ViewController } from 'ionic-angular';
+import { Calculations } from '../../providers/calculations';
 
 /*
   Generated class for the LoveTest page.
@@ -13,12 +14,16 @@ import { NavController, NavParams,ViewController } from 'ionic-angular';
   templateUrl: 'love-test.html'
 })
 export class LoveTestPage {
+love:any;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
-    
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public viewCtrl:ViewController,public calculations:Calculations) {
+    this.love={your_name:'name',your_dob:'DD/MM/YY'}
+    this.love.your_name=navParams.get('your_name');
+     this.love.your_dob="19/02/1993";
     console.log(navParams.get('your_name'));
-
+console.log(this.love);
+this.calculations.getDD(this.love.your_dob);
   }
 
   ionViewDidLoad() {

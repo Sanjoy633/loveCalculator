@@ -17,13 +17,13 @@
 </ion-header>
 
 
-<ion-content padding color="pink-darken-1">
+<ion-content padding color="pink-darken-1" class="bg">
 
    <ion-grid class="my-overlay">
   <ion-row>
   <ion-col width-25></ion-col>
     <ion-col width-50 > 
-<ion-icon class="text-heart" > </ion-icon> 
+<ion-icon class="text-heart" > 70%</ion-icon> 
  </ion-col>
 <ion-col width-25></ion-col>
   </ion-row>
@@ -32,14 +32,39 @@
   <ion-row>
   
  
-<ion-icon name="heart" class="heart"> </ion-icon>
+<ion-icon name="heart" class="heart" > </ion-icon>
+<br>
  
-      
-   
-  
-
-
-  </ion-row>
+   </ion-row>
+   <ion-row > 
+     <ion-list class="full-width">
+<ion-list-header color="pink-lighten-1">
+    Your
+  </ion-list-header>
+  <ion-item class="test">
+    <ion-label fixed color="white">Name</ion-label>
+    <ion-input type="text"  name="your_name"></ion-input>
+  </ion-item>
+<ion-item class="test">
+  <ion-label fixed color="white">Date of Birth</ion-label>
+  <ion-datetime displayFormat="MM/DD/YYYY"  name="your_dob"></ion-datetime>
+</ion-item>
+<br>
+ 
+<ion-list-header color="pink-lighten-1">
+    Partner's
+  </ion-list-header>
+  <ion-item class="test">
+    <ion-label fixed color="white">Name</ion-label>
+    <ion-input type="text" name="partner_name"></ion-input>
+  </ion-item>
+<ion-item class="test">
+  <ion-label fixed color="white">Date of Birth</ion-label>
+  <ion-datetime displayFormat="MM/DD/YYYY"  name="partner_dob"></ion-datetime>
+</ion-item>
+<br>
+</ion-list>
+</ion-row>
 </ion-grid>
  
 

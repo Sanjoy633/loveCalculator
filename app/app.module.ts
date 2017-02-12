@@ -2,7 +2,9 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import {LoveTestPage} from '../pages/love-test/love-test'
+import {LoveTestPage} from '../pages/love-test/love-test';
+import { Calculations } from '../providers/calculations';
+
 
 
 @NgModule({
@@ -22,6 +24,6 @@ import {LoveTestPage} from '../pages/love-test/love-test'
     LoveTestPage,
       
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},Calculations]
 })
 export class AppModule {}
