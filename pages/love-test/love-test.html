@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="pink-darken-1">
-    <ion-title>LoveTest</ion-title>
+    <ion-title>Result</ion-title>
     <ion-buttons end>
 
 <button ion-button icon-only (click)="closeModal()"><ion-icon name="close"></ion-icon></button>
@@ -19,53 +19,42 @@
 
 <ion-content padding color="pink-darken-1" class="bg">
 
-   <ion-grid class="my-overlay">
-  <ion-row>
-  <ion-col width-25></ion-col>
-    <ion-col width-50 > 
-<ion-icon class="text-heart" > 70%</ion-icon> 
- </ion-col>
-<ion-col width-25></ion-col>
-  </ion-row>
-</ion-grid>
-  <ion-grid class="custom-hw">
-  <ion-row>
+ 
+  <ion-content class="custom-hw">
+  <ion-row class="pos-rel">
   
  
 <ion-icon name="heart" class="heart" > </ion-icon>
-<br>
+<ion-icon class="text-heart pos-abs" > {{this.love.love_percentage}}%</ion-icon> 
+
  
    </ion-row>
-   <ion-row > 
-     <ion-list class="full-width">
-<ion-list-header color="pink-lighten-1">
-    Your
+   
+   <ion-row *ngFor="let description of calculations.allDay"> 
+     <ion-list class="full-width " *ngIf="description.day==this.love.your_day" >
+<ion-list-header color="pink-lighten-1"  >
+    About {{this.love.your_name}}
   </ion-list-header>
-  <ion-item class="test">
-    <ion-label fixed color="white">Name</ion-label>
-    <ion-input type="text"  name="your_name"></ion-input>
-  </ion-item>
-<ion-item class="test">
-  <ion-label fixed color="white">Date of Birth</ion-label>
-  <ion-datetime displayFormat="MM/DD/YYYY"  name="your_dob"></ion-datetime>
-</ion-item>
-<br>
+  <ion-content class="height-custom test">
+    {{description.desc}}
+  </ion-content>
+     </ion-list>
+   </ion-row>
+  
+<ion-row *ngFor="let description of calculations.allDay"> 
+ <ion-list class="full-width" *ngIf="description.day==this.love.partner_day">
  
-<ion-list-header color="pink-lighten-1">
-    Partner's
+<ion-list-header color="pink-lighten-1" >
+    About {{this.love.partner_name}}
   </ion-list-header>
-  <ion-item class="test">
-    <ion-label fixed color="white">Name</ion-label>
-    <ion-input type="text" name="partner_name"></ion-input>
-  </ion-item>
-<ion-item class="test">
-  <ion-label fixed color="white">Date of Birth</ion-label>
-  <ion-datetime displayFormat="MM/DD/YYYY"  name="partner_dob"></ion-datetime>
-</ion-item>
-<br>
+  <ion-content class="height-custom test">
+    {{description.desc}}
+  </ion-content>
+
+
 </ion-list>
 </ion-row>
-</ion-grid>
+</ion-content>
  
 
  

@@ -7,18 +7,19 @@
 </ion-header>
 
 <ion-content padding class="bg" >
-  <form (ngSubmit)="testLoveCalculation()" class="test">
+ 
+  <form  class="test" [formGroup]="loveForm">
   <ion-list>
 <ion-list-header color="pink-lighten-1">
     Your
   </ion-list-header>
   <ion-item class="test">
     <ion-label fixed color="white">Name</ion-label>
-    <ion-input type="text" [(ngModel)]="data.your_name" name="your_name"></ion-input>
+    <ion-input type="text" formControlName="your_name"></ion-input>
   </ion-item>
 <ion-item class="test">
   <ion-label fixed color="white">Date of Birth</ion-label>
-  <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.your_dob" name="your_dob"></ion-datetime>
+  <ion-datetime displayFormat="DD MMM , YYYY" formControlName="your_dob"></ion-datetime>
 </ion-item>
 <br>
  
@@ -27,16 +28,17 @@
   </ion-list-header>
   <ion-item class="test">
     <ion-label fixed color="white">Name</ion-label>
-    <ion-input type="text" [(ngModel)]="data.partner" name="partner_name"></ion-input>
+    <ion-input type="text" formControlName="partner_name"></ion-input>
   </ion-item>
 <ion-item class="test">
   <ion-label fixed color="white">Date of Birth</ion-label>
-  <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.partner_dob" name="partner_dob"></ion-datetime>
+  <ion-datetime displayFormat="DD MMM , YYYY" [(ngModel)]="this.loveForm.partner_dob" formControlName="partner_dob"></ion-datetime>
 </ion-item>
 <br>
+<span *ngIf="submitAttempt" style="color: #ea6153;"> &nbsp;Please fill out all details accurately.</span>
 </ion-list>
-
- <button ion-button outline icon-left color="pink-darken-1" >
+ 
+ <button ion-button outline icon-left color="pink-darken-1-1" (click)="save()">
       <ion-icon name='heart' is-active="false"></ion-icon>
       Calculate
 </button>
