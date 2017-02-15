@@ -5,8 +5,7 @@ import { Calculations } from '../../providers/calculations';
 /*
   Generated class for the LoveTest page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
+  This a project of Unicode IT Solutions (http://unicodeitsolutions.com/ )
 */
 
 @Component({
@@ -55,7 +54,7 @@ loveCalculationFinal(){
     var using_name=this.calculations.nameToDigit(this.love.your_name)+""+this.calculations.nameToDigit(this.love.partner_name);
     var using_dob=""+this.calculations.getDDMMYY(this.love.your_dob)+""+this.calculations.getDDMMYY(this.love.partner_dob);
     var using_day=""+this.calculations.getDD(this.love.your_dob)+""+this.calculations.getDD(this.love.partner_dob);
-    var dob_has6=(this.calculations.checkHas6(this.love.partner_dob+this.love.your_dob)*0.5);
+    var dob_has6=(this.calculations.checkHas6(this.love.partner_dob+""+this.love.your_dob)*0.5);
     
     
     //console.log("your_name"+your_name);
